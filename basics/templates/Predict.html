@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% block content %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prediction</title>
+  <style media="screen">
+    body {
+      background-image: url('https://static.vecteezy.com/system/resources/previews/022/466/901/non_2x/black-and-white-background-of-us-currency-banknotes-financial-concept-money-background-hundred-dollar-bills-photo.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      font-family: sans-serif; /* Added a default font */
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 600px; /* Adjust as needed */
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    td {
+      padding: 10px;
+      color: white; /* White text for contrast */
+    }
+
+    input[type="text"] {
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: calc(100% - 22px); /* Adjust for padding */
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    button[type="submit"] {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block; /* Makes the button take full width */
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    .result {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: white;
+    }
+    .navbar {
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        .nav-link {
+            color: rgb(12, 191, 149);
+            font-family: 'Times New Roman', Times, serif;
+            font-size: x-large;
+        }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Fake Bill Prediction</h1>
+    <form method="POST">
+      {% csrf_token %}
+      <table>
+        <tr>
+          <td>
+            <h4>Enter the diagonal of the bill:</h4>
+          </td>
+          <td>
+            <input type="text" name="textdia">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h4>Enter the height left of the bill:</h4>
+          </td>
+          <td>
+            <input type="text" name="textheileft">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h4>Enter the height right of the bill:</h4>
+          </td>
+          <td>
+            <input type="text" name="textheirig">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h4>Enter the margin low of the bill:</h4>
+          </td>
+          <td>
+            <input type="text" name="textmarlow">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h4>Enter the margin up of the bill:</h4>
+          </td>
+          <td>
+            <input type="text" name="textmarup">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h4>Enter the length of the bill:</h4>
+          </td>
+          <td>
+            <input type="text" name="textleng">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <button type="submit" name="buttonpredict"><h3>Predict</h3></button>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="result">
+            {{ res }}
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</body>
+{% endblock %}

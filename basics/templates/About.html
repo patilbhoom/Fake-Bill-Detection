@@ -1,0 +1,110 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<head>
+    <title>About Us - Fake Bill Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8e5e5;
+            padding: 20px;
+            
+            background-image: url("https://media.istockphoto.com/id/1022888906/photo/business-lawyer-team-working-together-of-lawyer-in-the-meeting.jpg?s=612x612&w=0&k=20&c=qD2vKCA5NqIpcDb4fr3n13CW7FZ96jHBwgmOzUF2mg8=");
+            background-repeat: no-repeat; 
+            background-size: cover;  
+            background-position: center; 
+            background-attachment: fixed;  
+            position: relative;
+            }
+            
+            body::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 200%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 1;
+                        }
+                        
+                        h1, p {
+                            color: rgb(221, 206, 206);
+                            position: relative;
+                            z-index: 2;
+                            }
+                            h3{
+                                color: rgb(221, 206, 206);
+                            position: relative;
+                            z-index: 2;
+                            }
+                            p {
+                                font-size: 20px;
+                                width: 60%;
+                                margin: auto;
+                                line-height: 1.6;
+                                background: rgba(0, 0, 0, 0.4); 
+                                padding: 15px;
+                                border-radius: 10px;
+                               } 
+                               ul{
+                                font-family: 'Times New Roman', Times, serif;
+                                font-size: large;
+                                color:rgb(146, 19, 210);
+                               }
+                               .nav {
+                                margin-top: 20px;
+                                position: relative;
+                                z-index: 2;
+                                    }
+                                    .nav button {
+                                        padding: 10px;
+                                        background-color: #4CAF50;
+                                        color: white;
+                                        border: none;
+                                        cursor: pointer;
+                                        margin: 10px;
+                                        font-size: 16px;
+                                        border-radius: 5px;
+                                                }
+                                                .nav button:hover {
+                                                    background-color: #45a049;
+                                                                }
+            .navbar {
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        .nav-link {
+            color: rgb(12, 191, 149);
+            font-family: 'Times New Roman', Times, serif;
+            font-size: x-large;
+        }
+
+    </style>
+</head>
+<body>
+    <h1><strong><u>About Us</u></strong></h1>
+
+    <p>Karunadu Technologies Pvt. Ltd. Is a leading IT software solutions and services industry focussing on quality standards and customer values. We offer broad range of customized software applications powered by concrete technology and industry expertise.</p>
+    <h3><strong><u><b><font color: rgb(221, 206, 206) size="20pt" face="Times New Roman">Vision</font></b></u></strong></h3>
+    <p>To Empower Unskilled Individual with knowledge, skills and technical competencies in the field of Information Technology and Embedded Engineering which assist them to escalate as integrated individuals contributing to company’s and Nation’s growth.</p>
+    <h3><strong><u><b><font color: rgb(221, 206, 206) size="20pt" face="Times New Roman">Mission</font></b></u></strong></h3>
+    <p>  Provide cost effective and reliable solutions to customers across various latest technologies. Offer scalable end-to-end application development and management solutions, 
+        Provide cost effective highly scalable products for varied verticals. Focus on creating sustainable value growth through innovative solutions and unique partnerships. Create, design and deliver business solutions with high value and innovation by leveraging technology expertise and innovative business models to address long-term business objectives. Keep our products and services updated with the latest innovations in the respective requirement and technology. 
+    </p>
+    <h3><strong><u><b><font color: rgb(221, 206, 206) size="20pt" face="Times New Roman">Tech Innovation</font></b></u></strong></h3>
+    <ul align="center">
+        <li>Artificial Intelligence & Machine Learning</li>
+        <li>Django</li>
+        <li>Data Science</li>
+        <li>IEEE<li>
+        <li>Embedded Systems</li>
+        <li>Robotics</li>
+        <li>VLSI Design</li>
+        <li>Web Development</li>
+    </ul>
+</body>
+{% endblock %}

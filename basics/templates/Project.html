@@ -1,0 +1,232 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style media="screen">
+        *,
+        *:before,
+        *:after{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #080710;
+            background-image: url('https://thumbs.dreamstime.com/b/technology-web-background-virtual-concept-world-network-communication-abstract-artificial-intelligence-154263980.jpg');
+            background-size: cover; /* Cover the entire body */
+            background-repeat: no-repeat; /* Prevent image repetition */
+            background-attachment: fixed; /* Keep background fixed during scroll */
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Slightly transparent container */
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        h3 {
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+        ol {
+            margin-left: 20px;
+            margin-bottom: 30px;
+        }
+        li {
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+        li p {
+            margin-left: 20px;
+            font-size: 0.9em;
+        }
+        .background{
+            width: 430px;
+            height: 520px;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            left: 50%;
+            top: 50%;
+            display: none; /* Hide the form background */
+        }
+        .background .shape{
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            border-radius: 50%;
+        }
+        .shape:first-child{
+            background: linear-gradient(
+                #1845ad,
+                #23a2f6
+            );
+            left: -80px;
+            top: -80px;
+        }
+        .shape:last-child{
+            background: linear-gradient(
+                to right,
+                #ff512f,
+                #f09819
+            );
+            right: -30px;
+            bottom: -80px;
+        }
+        form{
+            height: 600px;
+            width: 450px;
+            background-color: rgba(255,255,255,0.13);
+            position: absolute;
+            transform: translate(-50%,-50%);
+            top: 50%;
+            left: 50%;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.1);
+            box-shadow: 0 0 40px rgba(8,7,16,0.6);
+            padding: 50px 35px;
+            display: none; /* Hide the form */
+        }
+        form *{
+            font-family: 'Poppins',sans-serif;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            outline: none;
+            border: none;
+        }
+        form h3{
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 42px;
+            text-align: center;
+        }
+
+        label{
+            display: block;
+            margin-top: 30px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        input{
+            display: block;
+            height: 40px;
+            width: 100%;
+            background-color: rgba(255,255,255,0.07);
+            border-radius: 3px;
+            padding: 0 10px;
+            margin-top: 2px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+        ::placeholder{
+            color: #e5e5e5;
+        }
+        button{
+            margin-top: 14px;
+            width: 100%;
+            background-color: #ffffff;
+            color: #080710;
+            padding: 15px 0;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .social{
+            margin-top: 30px;
+            display: flex;
+        }
+        .social div{
+            background: red;
+            width: 150px;
+            border-radius: 3px;
+            padding: 5px 10px 10px 5px;
+            background-color: rgba(255,255,255,0.27);
+            color: #eaf0fb;
+            text-align: center;
+        }
+        .social div:hover{
+            background-color: rgba(255,255,255,0.47);
+        }
+        .social i{
+            margin-right: 4px;
+        }
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        .nav-link {
+            color: rgb(12, 191, 149);
+            font-family: 'Times New Roman', Times, serif;
+            font-size: x-large;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 align="center"><u><b><font color="white" size="30pt" face="Times New Roman">Prediction on Fake Bills</font></b></u></h2>
+        <h2 align="center"><u><b><font color="white" size="20pt" face="Times New Roman">Using Machine Learning and Django</font></b></u></h2>
+        <p><font color="white" size="5pt" face="Times New Roman">Predicting the future of fake bills suggests that while technology to create highly realistic counterfeits may improve, advancements in security features on genuine currency, like color-shifting ink, intricate microprinting, and sophisticated watermarks, will likely make it increasingly difficult for counterfeiters to produce convincing fake bills, leading to a potential decrease in the prevalence of high-quality counterfeit currency; however, vigilance and awareness among individuals and businesses remain crucial for identifying potential fakes.</font> </p>
+        <h4><u><b><font color="white" size="20pt" face="Times New Roman">Description of the Dataset</font></b></u></h4>
+        <ul>
+            <li><font color="white" size="5pt" face="Times New Roman"> is_genuine -> (Target Variable)
+                <p> True (1)=Genuine Bill<br> False (0)= Fake Bill</font></p>
+            </li>
+            <li> <font color="white" size="5pt" face="Times New Roman">diagonal → Length of the bill's diagonal (in mm)
+                <p> A counterfeit bill may have slight variations in its diagonal measurement.</font></p>
+            </li>
+            <li> <font color="white" size="5pt" face="Times New Roman">height_left & height_right → Heights of the left & right sides of the bill
+                <p> Fake bills may have uneven height proportions compared to real ones.</font></p>
+            </li>
+            <li> <font color="white" size="5pt" face="Times New Roman">margin_low & margin_up → Margins at the top and bottom of the bill
+                <p>Counterfeit notes often have misaligned margins due to printing errors.</font></p>
+            </li>
+            <li><font color="white" size="5pt" face="Times New Roman">length → Overall length of the bill
+                <p>Fake bills might deviate slightly from the original dimensions.</font></p></li>
+                <h4><strong><u><b><font color="white" size="20pt" face="Times New Roman">Decision Tree Algorithm</font></b></u></strong></h4>
+                <ul>
+                    <li><font color="white" size="5pt" face="Times New Roman">
+                        <p>Tree-like Structure: Decisions are modeled as a tree with nodes (tests on attributes), branches (outcomes), and leaves (final predictions).</font></p>
+                    </li>
+                    <li> <font color="white" size="5pt" face="Times New Roman">
+                        <p> Recursive Partitioning: Data is repeatedly split into purer subsets based on feature values..</font></p>
+                    </li>
+                    <li> <font color="white" size="5pt" face="Times New Roman">
+                        <p> Feature Importance: Ranks features by their ability to effectively split the data.</font></p>
+                    </li>
+                    <li> <font color="white" size="5pt" face="Times New Roman">
+                        <p>Interpretable: Easy to visualize and understand, making predictions explainable.
+                        </font></p>
+                        <li> <font color="white" size="5pt" face="Times New Roman">
+                            <p>A decision tree is a supervised learning algorithm used for both classification and regression tasks.
+                            </font></p>
+                            <li> <font color="white" size="5pt" face="Times New Roman">
+                                <p>It models decisions as a tree-like structure where internal nodes represent attribute tests, branches represent attribute values, and leaf nodes represent final decisions or predictions.
+                                </font></p>
+                 </ul>
+    </div>
+</body>
+{% endblock %}
